@@ -1,0 +1,10 @@
+<div class="container">
+<h1 py-4>Newsletter</h1>
+
+<h2>Inscrivez-vous!</h2>
+
+<label>Email</label>
+<input type="text" class="form-control" placeholder="Entrez votre email" [(ngModel)]="email">
+
+<button [disabled]="email.length == 0" class="btn btn-warning my-3" (click)="validate()">Envoyer</button>
+</div>

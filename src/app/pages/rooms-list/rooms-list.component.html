@@ -1,0 +1,36 @@
+
+
+<div class="container py-3">
+
+  <h1 class="text-white">Les salles</h1>
+  <h4 class="text-white">Salle séléctionnée : {{ selectedRoom?.title }} </h4>
+
+  <p>
+    Difficulté min : <app-more-less [min]="1" [max]="3" [value]="difficultyMin" (valChange)="difficultyMin = $event"></app-more-less>
+  </p>
+
+  <div class="d-inline-flex p-2 flex-row" *ngFor="let oui of rooms">
+    <app-room *ngIf="difficultyMin <= oui.difficulty" [room]="oui" [text]="'Bonjour'" (selection)="selectedRoom = $event"></app-room>
+  </div>
+
+  <div>
+    <h2>En résumé</h2>
+    <table class="table table-bordered bg-white text-dark">
+      <thead>
+        <tr>
+          <td>#</td>
+          <td>Titre</td>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let r of rooms; let j = index">
+          <td>{{ j+1 }}</td>
+          <td> {{ r.title }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+</div>

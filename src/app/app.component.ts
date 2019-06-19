@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'escape';
+  title = ' Bienvenue dans Escape Game 2000';
+  isOpened = true;
 }

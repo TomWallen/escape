@@ -1,0 +1,21 @@
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" routerLink='/'>Escape</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" (click)="isOpened = !isOpened" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" [ngClass]="{'show' : isOpened}" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        
+        <li class="nav-item">
+          <a class="nav-link" routerLink='/rooms-list' routerLinkActive="active">Les salles <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/about']" [routerLinkActive]="'active'">A propos <span class="sr-only">(current)</span></a>
+          </li>
+      </ul>
+    </div>
+</nav>
+  

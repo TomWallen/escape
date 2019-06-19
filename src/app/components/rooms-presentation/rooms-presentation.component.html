@@ -1,0 +1,9 @@
+<div class="container">
+
+<h2>Les meilleurs salles</h2>
+
+<div *ngFor="let non of rooms; let z = index">
+    <app-room [room]="non" *ngIf="z <= 1" [displaySelection]="false"></app-room>
+</div>
+
+</div>

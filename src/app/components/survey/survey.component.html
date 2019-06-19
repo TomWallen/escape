@@ -1,0 +1,31 @@
+<div class="container py-5">
+  <h1>Aidez-nous à construire notre nouvelle salle</h1>
+
+  <label>Pseudo</label>
+  <!-- <input type="text" class="form-control" placeholder="Entrez votre nom" [value]="pseudo" (input)="pseudo= $event.target.value"> -->
+  <input type="text" class="form-control" placeholder="Entrez votre nom" [(ngModel)]="pseudo">
+
+  <div class="form-group">
+      <label for="category">Catégorie:</label>
+      <select id="category" class="form-control" [(ngModel)]="survey.category">
+        <option value="">Choisir dans la liste</option>
+        <option value="Histoire">Histoire</option>
+        <option value="Aventure">Aventure</option>
+        <option value="Futuriste">Futuriste</option>
+      </select>
+    </div> 
+    <p>Merci d'avoir pris le temps de repondre {{ pseudo }} </p>
+
+    <label>Avez-vous déjà fait une escape game ?</label>
+    <div class="radio">
+        <label><input type="radio" name="optradio" class="pr-2">Oui</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" name="optradio" class="pr-2">Non</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" name="optradio" class="pr-2">Peut-être</label>
+      </div> 
+
+    <button class="btn btn-warning" (click)="validate()">Envoyer</button>
+</div>

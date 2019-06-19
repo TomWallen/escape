@@ -1,0 +1,21 @@
+<div class="card" style="width: 18rem;" [ngClass]="{'virtual' : room.isVirtual}">
+    <img class="card-img-top" [src]="room.imageUrl" [alt]="room.imageAlt">
+      <div class="card-body">
+        <h5 class="card-title">{{ room.title }}</h5>
+        <p>
+          <span class="pr-2">De {{ room.nbMin }} à {{ room.nbMax }} joueurs</span>
+          <span class="float-right" [ngClass]="{'text-success' : room.difficulty == 1, 'text-warning' : room.difficulty == 2, 'text-danger' : room.difficulty == 3}">Difficulté : {{ room.difficulty }}</span>
+        </p>
+        <p class="card-text" *ngIf="seeMore">{{ room.description }}</p>
+
+        <a href="javascript:void(0)" *ngIf="!seeMore" (click)="seeMore = !seeMore">Voir plus</a>
+        <a href="javascript:void(0)" *ngIf="seeMore" (click)="seeMore = !seeMore">Voir moins</a>
+
+        <p>
+        <a *ngIf="displaySelection" class="btn btn-primary mr-2" (click)="sel(room)">Selectionner</a>
+        <a [routerLink]="['/room-detail']" class="btn btn-primary">Go</a>
+        <p>
+          
+        <p>{{ text }}</p>
+      </div>
+  </div>

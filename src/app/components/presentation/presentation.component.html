@@ -1,0 +1,19 @@
+<div class="container py-3">
+<h1 class="py-4">
+  {{ slide.title }}
+</h1>
+
+
+<img [src]="slide.image.src" [alt]="slide.image.alt" [title]="slide.image.title">
+
+<ul>
+  <li>{{ nBClassicRooms}} salles classiques</li>
+  <li>{{nBVirtualrooms}} salles virtuelles</li>
+  <li>{{ nBClassicRooms + nBVirtualrooms}} salles</li>
+  <li>soit {{ (nBClassicRooms + nBVirtualrooms) *60}} minutes</li>
+  <li>{{ lastLi() }}</li>
+</ul>
+
+
+<button class="btn btn-warning" [disabled]="IsDisabled" (click)="seeMore()">Voir plus</button>
+</div>

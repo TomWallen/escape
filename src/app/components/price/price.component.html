@@ -1,0 +1,17 @@
+<div class="container py-3">
+<h1>
+  {{ title }}
+</h1>
+
+<p>Nombre de personne : 
+  <button class="btn btn-dark" [disabled]="nbPerson == 1" (click)="retirer()">-</button>
+  {{nbPerson}}
+<button class="btn btn-dark" [disabled]="nbPerson == 6" (click)="ajouter()">+</button></p>
+
+<p>CODE PROMO : <br>
+  à l'input : <input class="form-control w-50" type="text" (input)="verifyPromo($event.target.value)">
+</p>
+
+<p>Prix total : {{ totalPrice }}</p>
+<p>Prix par personne : {{ priceByPerson() }}</p>
+</div>
